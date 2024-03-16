@@ -41,7 +41,7 @@ app.post("/createUser", async (rec, res) => {
 })
 
 app.use("/run", (req, res) => {
-    res.send("runs")
+    res.send("runsssssss")
 })
 
  
