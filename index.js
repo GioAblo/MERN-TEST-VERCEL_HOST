@@ -3,12 +3,16 @@ const app = express();
 const mongoose = require('mongoose');
 const UserModel = require('./models/Users');
 const cors = require('cors');
+require('dotenv').config();
 
+const port = process.env.PORT
 
 app.use(express.json())
 app.use(cors());
 
-mongoose.connect("mongodb+srv://user123:Password231@cluster0.auxaggk.mongodb.net/MERN")
+
+mongoose.connect(process.env.MONGO_URL)
+
  
 // app.get("/getUsers", (req, res) => {
 //     UserModel.find({}, (err, result) => {
@@ -45,6 +49,6 @@ app.use("/run", (req, res) => {
 })
 
  
-app.listen(3001, () => {
+app.listen(port, () => {
     console.log("server runs localhost 3001");
 })
